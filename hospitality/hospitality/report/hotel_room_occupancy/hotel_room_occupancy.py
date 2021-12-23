@@ -6,7 +6,7 @@ import frappe
 from frappe import _
 from frappe.utils import add_days, date_diff
 
-from erpnext.hotels.doctype.hotel_room_reservation.hotel_room_reservation import get_rooms_booked
+from hospitality.hospitality.doctype.hotel_room_reservation.hotel_room_reservation import get_rooms_booked
 
 
 def execute(filters=None):

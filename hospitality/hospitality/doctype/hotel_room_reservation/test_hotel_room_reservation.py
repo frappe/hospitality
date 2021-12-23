@@ -5,7 +5,7 @@ import unittest
 
 import frappe
 
-from erpnext.hotels.doctype.hotel_room_reservation.hotel_room_reservation import (
+from hospitality.hospitality.doctype.hotel_room_reservation.hotel_room_reservation import (
 	HotelRoomPricingNotSetError,
 	HotelRoomUnavailableError,
 )
