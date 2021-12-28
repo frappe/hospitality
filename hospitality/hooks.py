@@ -9,6 +9,9 @@ app_color = "grey"
 app_email = "pandikunta@frappe.io"
 app_license = "MIT"
 
+required_apps = ["erpnext"]
+
+
 # Includes in <head>
 # ------------------
 
@@ -188,3 +191,16 @@ app_license = "MIT"
 # 	"hospitality.auth.validate"
 # ]
 
+global_search_doctypes = {
+	"Hospitality": [
+		{'doctype': 'Hotel Room', 'index': 0},
+		{'doctype': 'Hotel Room Reservation', 'index': 1},
+		{'doctype': 'Hotel Room Pricing', 'index': 2},
+		{'doctype': 'Hotel Room Package', 'index': 3},
+		{'doctype': 'Hotel Room Type', 'index': 4}
+	]
+}
+
+domains = {
+	'Hospitality': 'hospitality.hospitality.hospitality',
+}
