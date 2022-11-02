@@ -5,7 +5,7 @@ frappe.ui.form.on('Restaurant Order Entry', {
 	setup: function(frm) {
 		let get_item_query = () => {
 			return {
-				query: 'erpnext.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.item_query_restaurant',
+				query: 'hospitality.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.item_query_restaurant',
 				filters: {
 					'table': frm.doc.restaurant_table
 				}
@@ -19,7 +19,7 @@ frappe.ui.form.on('Restaurant Order Entry', {
 			frm.item_selector = new erpnext.ItemSelector({
 				frm: frm,
 				item_field: 'item',
-				item_query: 'erpnext.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.item_query_restaurant',
+				item_query: 'hospitality.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.item_query_restaurant',
 				get_filters: () => {
 					return {table: frm.doc.restaurant_table};
 				}
@@ -87,7 +87,7 @@ frappe.ui.form.on('Restaurant Order Entry', {
 			return;
 		}
 		return frappe.call({
-			method: 'erpnext.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.get_invoice',
+			method: 'hospitality.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.get_invoice',
 			args: {
 				table: frm.doc.restaurant_table
 			},
@@ -98,7 +98,7 @@ frappe.ui.form.on('Restaurant Order Entry', {
 	},
 	sync: function(frm) {
 		return frappe.call({
-			method: 'erpnext.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.sync',
+			method: 'hospitality.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.sync',
 			args: {
 				table: frm.doc.restaurant_table,
 				items: frm.doc.items
@@ -133,7 +133,7 @@ frappe.ui.form.on('Restaurant Order Entry', {
 				// cache this for next entry
 				frm.mode_of_payment = data.mode_of_payment;
 				return frappe.call({
-					method: 'erpnext.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.make_invoice',
+					method: 'hospitality.restaurant.doctype.restaurant_order_entry.restaurant_order_entry.make_invoice',
 					args: {
 						table: frm.doc.restaurant_table,
 						customer: data.customer,
