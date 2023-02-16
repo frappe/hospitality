@@ -21,7 +21,7 @@ frappe.ui.form.on('Hotel Room Reservation', {
 			return;
 		}
 		frappe.call({
-			"method": "erpnext.hotels.doctype.hotel_room_reservation.hotel_room_reservation.get_room_rate",
+			"method": "hospitality.hotels.doctype.hotel_room_reservation.hotel_room_reservation.get_room_rate",
 			"args": {"hotel_room_reservation": frm.doc}
 		}).done((r)=> {
 			for (var i = 0; i < r.message.items.length; i++) {
